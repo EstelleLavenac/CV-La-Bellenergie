@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estelle × la bellenergie</title>
+<meta name="description" content="Candidature spontanée d'Estelle Lavenac, designer graphique senior (print, web & motion), pour la bellenergie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* couleurs relevées sur labellenergie.fr : vert #82C128 / #47904A, corail #FF674A, vert profond #042E16, crème #FBF7F0 */
+  --cream:#FBF7F0; --paper:#FFFDF9; --forest:#042E16; --forest-2:#0D4324;
+  --leaf:#47904A; --lime:#A9D84A; --brand:#82C128; --coral:#FF674A; --sun:#FFC93C; --ink:#10231A; --muted:#5B6B61;
+  --line:rgba(4,46,22,.14); --r:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+em,.it{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+@media(max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- top bar ---------- */
+.ticker{background:var(--forest);color:var(--lime);font-size:14px;overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:9px 0;animation:tick 28s linear infinite}
+.ticker span{margin:0 28px}
+@keyframes tick{to{transform:translateX(-50%)}}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,243,234,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--lime);color:var(--forest);font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s;border:0;cursor:pointer;font-family:inherit;font-size:16px}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--forest);color:var(--cream)}
+.btn-dark:hover{box-shadow:0 10px 30px -10px rgba(14,59,46,.6)}
+.btn-lime{background:var(--lime);color:var(--forest)}
+.btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest)}
+nav .btn{padding:10px 18px;font-size:14px}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-coral:hover{box-shadow:0 10px 30px -10px rgba(255,103,74,.7)}
+.logo svg{height:28px;width:auto;display:block}
+.logo .x{color:var(--muted);font-size:22px}
+.links{display:flex;gap:26px;list-style:none;font-size:15px}
+.links a{text-decoration:none;color:var(--forest);opacity:.8;transition:opacity .2s}
+.links a:hover{opacity:1}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:var(--forest);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.drawer{display:none}
+@media(max-width:900px){
+  .links,nav .nav-cta{display:none}
+  .burger{display:block}
+  .drawer{display:block;position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 68px);overflow:auto;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 16px 24px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:all .3s;z-index:19}
+  .menu-open .drawer{transform:none;opacity:1;visibility:visible}
+  .drawer a.l{display:block;padding:16px 4px;border-bottom:1px solid var(--line);font-size:22px;font-weight:600;color:var(--forest);text-decoration:none;letter-spacing:-.02em}
+  .drawer .btn{margin-top:20px;width:100%;justify-content:center}
+}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:14px;color:var(--forest-2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 0 rgba(47,163,107,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(47,163,107,0)}100%{box-shadow:0 0 0 0 rgba(47,163,107,0)}}
+h1{font-size:clamp(44px,7vw,92px);line-height:.95;letter-spacing:-.045em;font-weight:800;color:var(--forest);margin:22px 0 22px}
+h1 em{color:var(--leaf);font-size:1.08em}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:540px}
+.lead strong{color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+.hero-card{position:relative;background:var(--forest);border-radius:36px;aspect-ratio:4/5;overflow:hidden;color:var(--cream)}
+.sunball{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE38A,var(--sun) 60%,#F5A623);top:-12%;right:-14%;filter:blur(.3px);animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(18px)}}
+.hills{position:absolute;inset:auto 0 0 0;height:46%}
+.turbine{position:absolute;bottom:30%;width:18%}
+.turbine .blades{transform-origin:50px 50px;animation:spin 4s linear infinite}
+.turbine.t2{left:52%;width:13%;bottom:34%}
+.turbine.t2 .blades{animation-duration:5.5s}
+.turbine.t1{left:20%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.meter{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,253,247,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;align-items:flex-end}
+.meter small{font-size:12px;opacity:.75;text-transform:uppercase;letter-spacing:.08em}
+.meter .num{font-size:40px;font-weight:800;letter-spacing:-.04em;color:var(--lime);line-height:1}
+.meter .unit{font-family:"Instrument Serif",serif;font-style:italic;font-size:20px;color:var(--cream)}
+.bolt{width:44px;height:44px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--forest);font-size:22px}
+
+/* ---------- sections ---------- */
+section{padding:96px 0}
+.kicker{font-size:14px;text-transform:uppercase;letter-spacing:.14em;color:var(--leaf);font-weight:600;margin-bottom:14px}
+h2{font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-.04em;font-weight:800;color:var(--forest);max-width:820px}
+h2 em{color:var(--leaf)}
+.sub{color:var(--muted);max-width:620px;margin-top:18px;font-size:18px}
+
+/* promises */
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.promise{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:transform .3s,background .3s}
+.promise:hover{transform:translateY(-6px);background:#fff}
+.ico{width:52px;height:52px;border-radius:16px;background:var(--cream);display:grid;place-items:center;font-size:24px;margin-bottom:22px}
+.promise h3{font-size:20px;letter-spacing:-.02em;color:var(--forest);margin-bottom:6px}
+.promise p{color:var(--muted);font-size:15.5px}
+
+/* offers */
+.offers-band{background:var(--forest);color:var(--cream);border-radius:44px;margin:0 12px;padding:96px 0}
+.offers-band h2,.offers-band .kicker{color:var(--cream)}
+.offers-band .kicker{color:var(--lime)}
+.offers-band h2 em{color:var(--lime)}
+.offers-band .sub{color:rgba(246,243,234,.72)}
+.toggle{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:5px;margin-top:32px}
+.toggle button{background:transparent;border:0;color:var(--cream);font:inherit;font-size:15px;padding:10px 20px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.toggle button.on{background:var(--lime);color:var(--forest);font-weight:600}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.offer{background:var(--forest-2);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column;transition:transform .3s}
+.offer:hover{transform:translateY(-6px)}
+.offer.star{background:var(--lime);color:var(--forest)}
+.offer .tag{font-size:13px;opacity:.75;text-transform:uppercase;letter-spacing:.1em}
+.offer h3{font-size:30px;letter-spacing:-.03em;margin:10px 0 4px}
+.offer .price{font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;margin-bottom:18px;opacity:.9}
+.offer ul{list-style:none;display:grid;gap:10px;font-size:15.5px;margin-bottom:8px}
+.offer li{display:flex;gap:10px}
+.offer li:before{content:"✓";font-weight:800;color:var(--lime)}
+.offer.star li:before{color:var(--forest)}
+.offer .extra{margin-top:auto;padding-top:18px;font-size:14.5px;border-top:1px dashed currentColor;opacity:0;max-height:0;overflow:hidden;transition:all .4s}
+.hp .offer .extra{opacity:.9;max-height:120px;margin-top:16px}
+.fine{font-size:13px;opacity:.6;margin-top:22px}
+
+/* mix */
+.mix{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.bars{display:grid;gap:22px}
+.bar-head{display:flex;justify-content:space-between;font-weight:600;color:var(--forest);margin-bottom:8px}
+.bar-head span:last-child{font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;font-weight:400}
+.track{height:18px;background:var(--paper);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.bar-note{font-size:14.5px;color:var(--muted);margin-top:6px}
+.cert{display:flex;gap:14px;align-items:center;margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:16px 18px;font-size:15px}
+.cert b{color:var(--forest)}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:48px}
+.value{border-radius:var(--r);padding:26px 22px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s}
+.value:hover{transform:rotate(-1.5deg) translateY(-4px)}
+.value:nth-child(1){background:#E3F6D6}
+.value:nth-child(2){background:#FFF0C2}
+.value:nth-child(3){background:#D9EFE6}
+.value:nth-child(4){background:#F1F5FF}
+.value:nth-child(5){background:#FDE4D6}
+.value h3{font-size:24px;letter-spacing:-.03em;color:var(--forest)}
+.value .them{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.value p{font-size:15.5px;color:var(--ink)}
+
+/* ideas */
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.idea{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.idea .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:48px;line-height:.8;color:var(--leaf)}
+.idea h3{font-size:22px;color:var(--forest);letter-spacing:-.02em;margin-bottom:6px}
+.idea p{color:var(--muted);font-size:15.5px}
+
+/* final */
+.final{background:var(--lime);border-radius:44px;margin:0 12px;padding:96px 0;text-align:center;position:relative;overflow:hidden}
+.final h2{margin:0 auto;max-width:900px}
+.final h2 em{color:var(--forest-2)}
+.final .sub{margin:20px auto 0;color:var(--forest-2)}
+.final .cta{justify-content:center}
+.steps{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+.steps span{background:rgba(14,59,46,.08);border-radius:999px;padding:8px 16px;font-size:14.5px;color:var(--forest)}
+.spark{position:absolute;font-size:34px;opacity:.25;animation:float 7s ease-in-out infinite}
+
+footer{padding:60px 0 50px;text-align:center}
+footer .big{font-size:clamp(22px,3vw,34px);letter-spacing:-.03em;color:var(--forest);font-weight:600;line-height:1.2;max-width:820px;margin:0 auto}
+footer .big em{color:var(--leaf)}
+footer p.small{color:var(--muted);font-size:14px;margin-top:22px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero-grid,.mix{grid-template-columns:1fr}
+  .hero-card{max-width:460px;width:100%;aspect-ratio:1/1}
+  .promises{grid-template-columns:1fr 1fr}
+  .offers{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr 1fr}
+  .ideas{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  section{padding:72px 0}
+  .offers-band,.final{border-radius:28px;margin:0 8px;padding:72px 0}
+  .promises,.values{grid-template-columns:1fr}
+  .value{min-height:auto;gap:24px}
+  .idea{grid-template-columns:1fr;padding:26px}
+  nav .hide-m{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>⚡ Candidature spontanée</span><span>Designer graphique senior</span><span>Print · Web · Motion</span><span>100 % locale, Var</span><span>Disponible maintenant</span><span>Sans démarchage… enfin presque</span>
+  <span>⚡ Candidature spontanée</span><span>Designer graphique senior</span><span>Print · Web · Motion</span><span>100 % locale, Var</span><span>Disponible maintenant</span><span>Sans démarchage… enfin presque</span>
+</div></div>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top" aria-label="Estelle × la bellenergie"><b>E</b><span class="x it">×</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 223 41" role="img" aria-label="la bellenergie"><defs><linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="251.139999" y1="-88.129997" x2="215.460007" y2="-175.25" gradientTransform="matrix(0.0886497,0.216739,0.216473,-0.0887588,20.323094,-39.812378)"><stop offset="0" stop-color="#d4d924"/><stop offset="1" stop-color="#47904a"/></linearGradient><linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="205.380005" y1="-177.990005" x2="245.880005" y2="-79.099998" gradientTransform="matrix(0.0886497,0.216739,0.216473,-0.0887588,20.323094,-39.812378)"><stop offset="0" stop-color="#ccd62e"/><stop offset="1" stop-color="#47904a"/></linearGradient></defs><path fill="#82bb30" d="M 37 27C36 26.1 35.5 24.8 35.5 23.1L35.5 8.6L40.5 8.6L40.5 22.9C40.5 23.4 40.6 23.8 40.9 24.1C41.2 24.3 41.6 24.5 42.1 24.5C42.5 24.5 42.8 24.4 43.2 24.2L43.4 28C42.6 28.2 41.9 28.3 41.1 28.3C39.3 28.3 37.9 27.9 37 27ZM 59.4 13.9L59.4 28.1L54.7 28.1L54.7 26.7C53.8 27.8 52.4 28.3 50.5 28.3C49.2 28.3 48 28 47 27.4C45.9 26.8 45.1 26 44.4 24.9C43.8 23.7 43.5 22.4 43.5 21C43.5 19.5 43.8 18.2 44.4 17.1C45.1 16 45.9 15.1 47 14.5C48 13.9 49.2 13.6 50.5 13.6C52.2 13.6 53.5 14.1 54.4 15.1L54.4 13.9ZM 53.7 23.5C54.2 22.9 54.5 22 54.5 21C54.5 19.9 54.2 19.1 53.7 18.5C53.1 17.9 52.4 17.6 51.5 17.6C50.7 17.6 49.9 17.9 49.4 18.5C48.8 19.1 48.5 19.9 48.5 21C48.5 22 48.8 22.9 49.4 23.5C49.9 24.1 50.7 24.4 51.5 24.4C52.4 24.4 53.1 24.1 53.7 23.5ZM 81.7 14.5C82.8 15.1 83.6 16 84.2 17.1C84.8 18.2 85.2 19.5 85.2 21C85.2 22.4 84.8 23.7 84.2 24.9C83.6 26 82.8 26.8 81.7 27.4C80.6 28 79.5 28.3 78.2 28.3C76.3 28.3 74.9 27.8 74 26.7L74 28.1L69.2 28.1L69.2 8.6L74.2 8.6L74.2 15.1C75.2 14.1 76.5 13.6 78.2 13.6C79.5 13.6 80.6 13.9 81.7 14.5ZM 79.3 23.5C79.8 22.9 80.1 22 80.1 21C80.1 19.9 79.8 19.1 79.3 18.5C78.7 17.9 78 17.6 77.1 17.6C76.2 17.6 75.5 17.9 75 18.5C74.4 19.1 74.1 19.9 74.1 21C74.1 22 74.4 22.9 75 23.5C75.5 24.1 76.2 24.4 77.1 24.4C78 24.4 78.7 24.1 79.3 23.5ZM 96.3 24.2C96.8 24.1 97.3 23.7 97.8 23.3L100.4 26C99.1 27.6 97.1 28.3 94.4 28.3C92.7 28.3 91.3 28 90 27.4C88.7 26.8 87.8 25.9 87.1 24.8C86.4 23.6 86 22.4 86 21C86 19.5 86.4 18.3 87.1 17.2C87.8 16.1 88.7 15.2 89.9 14.6C91.1 13.9 92.4 13.6 93.9 13.6C95.3 13.6 96.6 13.9 97.7 14.5C98.9 15.1 99.8 15.9 100.5 17C101.1 18.1 101.5 19.4 101.5 20.9L91.3 22.8C91.9 24 92.9 24.5 94.6 24.5C95.2 24.5 95.8 24.4 96.3 24.2ZM 91.8 18C91.3 18.5 91 19.3 90.9 20.3L96.7 19.1C96.5 18.6 96.2 18.1 95.7 17.7C95.2 17.4 94.6 17.2 93.9 17.2C93.1 17.2 92.4 17.4 91.8 18ZM 104.7 27C103.8 26.1 103.3 24.8 103.3 23.1L103.3 8.6L108.3 8.6L108.3 22.9C108.3 23.4 108.4 23.8 108.7 24.1C108.9 24.3 109.3 24.5 109.8 24.5C110.2 24.5 110.6 24.4 110.9 24.2L111.1 28C110.4 28.2 109.6 28.3 108.8 28.3C107.1 28.3 105.7 27.9 104.7 27ZM 113.9 27C112.9 26.1 112.4 24.8 112.4 23.1L112.4 8.6L117.4 8.6L117.4 22.9C117.4 23.4 117.5 23.8 117.8 24.1C118.1 24.3 118.4 24.5 118.9 24.5C119.3 24.5 119.7 24.4 120.1 24.2L120.3 28C119.5 28.2 118.7 28.3 117.9 28.3C116.2 28.3 114.8 27.9 113.9 27Z"/><path fill="#47904a" d="M 130.7 24.2C131.2 24.1 131.7 23.7 132.2 23.3L134.8 26C133.4 27.6 131.4 28.3 128.7 28.3C127.1 28.3 125.6 28 124.3 27.4C123.1 26.8 122.1 25.9 121.4 24.8C120.7 23.6 120.4 22.4 120.4 21C120.4 19.5 120.7 18.3 121.4 17.2C122.1 16.1 123 15.2 124.2 14.6C125.4 13.9 126.8 13.6 128.3 13.6C129.6 13.6 130.9 13.9 132 14.5C133.2 15.1 134.1 15.9 134.8 17C135.5 18.1 135.8 19.4 135.8 20.9L125.7 22.8C126.2 24 127.3 24.5 128.9 24.5C129.6 24.5 130.2 24.4 130.6 24.2ZM 126.2 18C125.6 18.5 125.3 19.3 125.3 20.3L131 19.1C130.9 18.6 130.5 18.1 130 17.7C129.5 17.4 129 17.2 128.3 17.2C127.4 17.2 126.7 17.4 126.2 18ZM 151.1 15.2C152.2 16.3 152.7 17.8 152.7 20L152.7 28.1L147.8 28.1L147.8 20.8C147.8 18.8 147 17.9 145.4 17.9C144.6 17.9 143.9 18.1 143.4 18.7C142.8 19.3 142.6 20.1 142.6 21.2L142.6 28.1L137.6 28.1L137.6 13.9L142.3 13.9L142.3 15.4C142.9 14.8 143.6 14.4 144.3 14.1C145.1 13.8 145.9 13.6 146.9 13.6C148.6 13.6 150 14.2 151.1 15.2ZM 164.9 24.2C165.4 24.1 165.9 23.7 166.4 23.3L169 26C167.7 27.6 165.7 28.3 163 28.3C161.3 28.3 159.9 28 158.6 27.4C157.4 26.8 156.4 25.9 155.7 24.8C155 23.6 154.7 22.4 154.7 21C154.7 19.5 155 18.3 155.7 17.2C156.4 16.1 157.3 15.2 158.5 14.6C159.7 13.9 161 13.6 162.5 13.6C163.9 13.6 165.2 13.9 166.3 14.5C167.5 15.1 168.4 15.9 169.1 17C169.7 18.1 170.1 19.4 170.1 20.9L159.9 22.8C160.5 24 161.5 24.5 163.2 24.5C163.8 24.5 164.4 24.4 164.9 24.2ZM 160.5 18C159.9 18.5 159.6 19.3 159.5 20.3L165.3 19.1C165.1 18.6 164.8 18.1 164.3 17.7C163.8 17.4 163.2 17.2 162.6 17.2C161.7 17.2 161 17.4 160.5 18ZM 178.6 14.1C179.4 13.8 180.3 13.6 181.4 13.6L181.4 18.1C180.9 18.1 180.6 18 180.3 18C179.2 18 178.4 18.3 177.8 18.9C177.2 19.5 176.9 20.4 176.9 21.6L176.9 28.1L171.9 28.1L171.9 13.9L176.6 13.9L176.6 15.6C177.1 14.9 177.8 14.4 178.6 14.1ZM 198.1 13.9L198.1 25.5C198.1 28.2 197.4 30.1 195.9 31.5C194.5 32.8 192.4 33.4 189.7 33.4C188.3 33.4 187 33.3 185.8 33C184.6 32.7 183.5 32.2 182.7 31.6L184.5 28.1C185.1 28.6 185.8 28.9 186.7 29.2C187.6 29.5 188.4 29.6 189.3 29.6C190.6 29.6 191.6 29.3 192.2 28.7C192.8 28.2 193.1 27.3 193.1 26.2L193.1 25.7C192.1 26.8 190.7 27.4 188.9 27.4C187.6 27.4 186.5 27.1 185.4 26.5C184.3 25.9 183.5 25.1 182.8 24.1C182.2 23.1 181.9 21.9 181.9 20.5C181.9 19.1 182.2 17.9 182.8 16.9C183.5 15.9 184.3 15.1 185.4 14.5C186.5 13.9 187.6 13.6 188.9 13.6C190.9 13.6 192.4 14.3 193.3 15.6L193.3 13.9L198.1 13.9ZM 192.3 22.6C192.9 22 193.2 21.3 193.2 20.5C193.2 19.6 192.9 18.9 192.3 18.4C191.7 17.9 191 17.6 190.1 17.6C189.2 17.6 188.4 17.9 187.8 18.4C187.2 18.9 186.9 19.6 186.9 20.5C186.9 21.3 187.2 22 187.8 22.6C188.4 23.1 189.2 23.4 190.1 23.4C191 23.4 191.7 23.1 192.3 22.6ZM 201.1 11.5C200.5 11 200.2 10.4 200.2 9.6C200.2 8.9 200.5 8.3 201.1 7.7C201.6 7.2 202.4 7 203.3 7C204.2 7 204.9 7.2 205.5 7.7C206 8.2 206.3 8.8 206.3 9.6C206.3 10.3 206 11 205.5 11.5C204.9 12 204.2 12.3 203.3 12.3C202.4 12.3 201.6 12 201.1 11.5ZM 200.8 13.9L205.8 13.9L205.8 28.1L200.8 28.1ZM 217.8 24.2C218.3 24.1 218.8 23.7 219.4 23.3L221.9 26C220.6 27.6 218.6 28.3 215.9 28.3C214.3 28.3 212.8 28 211.5 27.4C210.3 26.8 209.3 25.9 208.6 24.8C207.9 23.6 207.6 22.4 207.6 21C207.6 19.5 207.9 18.3 208.6 17.2C209.3 16.1 210.2 15.2 211.4 14.6C212.6 13.9 214 13.6 215.4 13.6C216.8 13.6 218.1 13.9 219.2 14.5C220.4 15.1 221.3 15.9 222 17C222.7 18.1 223 19.4 223 20.9L212.8 22.8C213.4 24 214.5 24.5 216.1 24.5C216.8 24.5 217.3 24.4 217.8 24.2ZM 213.4 18C212.8 18.5 212.5 19.3 212.4 20.3L218.2 19.1C218 18.6 217.7 18.1 217.2 17.7C216.7 17.4 216.1 17.2 215.5 17.2C214.6 17.2 213.9 17.4 213.4 18Z"/><path fill="url(#linear0)" d="M 8.7 19.8C10.4 22.5 14.5 22.7 21.8 16.8L23.5 15.4L17.4 24.7L16.7 25.5C9.7 31.8 4.2 29.8 1.5 25.7"/><path fill="url(#linear1)" d="M 1.5 25.6C-1.3 20.8 -0.1 14.1 4.3 10.6L17.2 0C20 4.9 18.8 11.6 14.5 15.1ZM 20.7 30.4C25.1 26.9 26.3 20.2 23.5 15.4L10.5 25.9C6.2 29.4 5 36.1 7.8 41Z"/></svg></a>
+  <ul class="links">
+    <li><a href="#pourquoi">Pourquoi moi</a></li>
+    <li><a href="#offres">Mes offres</a></li>
+    <li><a href="#mix">Mon énergie</a></li>
+    <li><a href="#valeurs">Valeurs</a></li>
+    <li><a href="#idees">Idées</a></li>
+  </ul>
+  <a class="btn btn-coral nav-cta" href="#contact">Souscrire à mon profil →</a>
+  <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+</div><div class="drawer" id="drawer">
+  <a class="l" href="#pourquoi">Pourquoi moi</a>
+  <a class="l" href="#offres">Mes offres</a>
+  <a class="l" href="#mix">Mon énergie</a>
+  <a class="l" href="#valeurs">Valeurs</a>
+  <a class="l" href="#idees">Idées</a>
+  <a class="btn btn-coral" href="https://estellelavenac.github.io/Estelle-Lavenac/" target="_blank" rel="noopener">Voir mon CV →</a>
+</div></nav>
+
+
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div class="rv">
+    <span class="pill"><i class="dot"></i> Designer disponible · Pierrefeu-du-Var</span>
+    <h1>Une designer <em>verte</em>, locale et à haut rendement.</h1>
+    <p class="lead">Recruter la bonne designer, ça change tout, <strong>sauf vos habitudes</strong>. 9 ans de print, de web et de motion, branchés en direct sur vos campagnes, votre appli et votre site.</p>
+    <div class="cta">
+      <a class="btn btn-dark" href="https://estellelavenac.github.io/Estelle-Lavenac/" target="_blank" rel="noopener">Voir mon CV →</a>
+      <a class="btn btn-ghost" href="#offres">Mes offres ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-card rv" aria-hidden="true">
+    <div class="sunball"></div>
+    <svg class="hills" viewBox="0 0 400 200" preserveAspectRatio="none">
+      <path d="M0 90 C 90 30, 170 40, 250 85 S 360 120, 400 70 L400 200 L0 200Z" fill="#82C128"/>
+      <path d="M0 140 C 80 100, 200 110, 280 140 S 380 150, 400 130 L400 200 L0 200Z" fill="#47904A"/>
+    </svg>
+    <svg class="turbine t1" viewBox="0 0 100 220"><rect x="47" y="50" width="6" height="170" rx="3" fill="#F6F3EA"/><g class="blades" fill="#F6F3EA"><path d="M50 50 L46 6 Q50 0 54 6Z"/><path d="M50 50 L46 6 Q50 0 54 6Z" transform="rotate(120 50 50)"/><path d="M50 50 L46 6 Q50 0 54 6Z" transform="rotate(240 50 50)"/><circle cx="50" cy="50" r="5"/></g></svg>
+    <svg class="turbine t2" viewBox="0 0 100 220"><rect x="47" y="50" width="6" height="170" rx="3" fill="#F6F3EA"/><g class="blades" fill="#F6F3EA"><path d="M50 50 L46 6 Q50 0 54 6Z"/><path d="M50 50 L46 6 Q50 0 54 6Z" transform="rotate(120 50 50)"/><path d="M50 50 L46 6 Q50 0 54 6Z" transform="rotate(240 50 50)"/><circle cx="50" cy="50" r="5"/></g></svg>
+    <div class="meter">
+      <div><small>Compteur créatif</small><div><span class="num" data-count="9">0</span> <span class="unit">ans d'expérience</span></div></div>
+      <div class="bolt">⚡</div>
+    </div>
+  </div>
+</div></header>
+
+<section id="pourquoi"><div class="wrap">
+  <p class="kicker rv">Pourquoi me choisir ?</p>
+  <h2 class="rv">Les mêmes promesses que vous, <em>appliquées au design.</em></h2>
+  <div class="promises">
+    <div class="promise rv"><div class="ico">📍</div><h3>Production locale</h3><p>Basée à Pierrefeu-du-Var, à une demi-heure de vos bureaux de la place de la Liberté.</p></div>
+    <div class="promise rv"><div class="ico">⏱️</div><h3>Souscription rapide</h3><p>Pas 3 minutes, mais presque : un café, un échange, et on voit si le courant passe.</p></div>
+    <div class="promise rv"><div class="ico">🤝</div><h3>Service créa basé en France</h3><p>Disponible, réactive, et capable de parler aussi bien à un dev qu'à la team marketing.</p></div>
+    <div class="promise rv"><div class="ico">🔌</div><h3>Sans coupure</h3><p>Du brief au fichier final, sans jargon ni frais cachés. Tout simplement.</p></div>
+  </div>
+</div></section>
+
+<div class="offers-band" id="offres"><div class="wrap">
+  <p class="kicker rv">Mes offres</p>
+  <h2 class="rv">Des <em>compétences</em> qui s'adaptent à vos besoins.</h2>
+  <p class="sub rv">Choisissez votre formule. Bonne nouvelle : les trois sont incluses dans le même contrat.</p>
+  <div class="toggle rv" role="group" aria-label="Formule">
+    <button class="on" data-mode="base">Base</button>
+    <button data-mode="hp">Heures Pleines ⚡</button>
+  </div>
+  <div class="offers" id="offersGrid">
+    <article class="offer rv">
+      <span class="tag">Offre n°1</span><h3>Print</h3><p class="price">prix fixe garanti</p>
+      <ul><li>Affiches, flyers, kakémonos</li><li>Supports salons & « dans vos villes »</li><li>Packaging, édition, prépresse</li></ul>
+      <p class="extra">+ en Heures Pleines : un kit de déclinaison prêt à l'emploi pour chaque opé (type jeu concours RCT).</p>
+    </article>
+    <article class="offer star rv">
+      <span class="tag">Offre n°2 · la plus souscrite</span><h3>Web, Print & Motion</h3><p class="price">kWh d'idées moins cher</p>
+      <ul><li>Landing pages, site & blog</li><li>UI de l'espace client et de l'appli</li><li>Bannières, newsletters, social ads</li><li>Affiches, flyers & supports salons</li><li>Édition, packaging, prépresse</li><li>Vidéos & motion design (réseaux, pub, pédago)</li></ul>
+      <p class="extra">+ en Heures Pleines : un design system print, web & motion, pour que chaque support parle la même langue.</p>
+    </article>
+    <article class="offer rv">
+      <span class="tag">Offre n°3</span><h3>Motion</h3><p class="price">énergie 100 % animée</p>
+      <ul><li>Formats courts réseaux sociaux</li><li>Habillage vidéo & motion pédago</li><li>Micro-animations pour le web</li></ul>
+      <p class="extra">+ en Heures Pleines : des capsules qui rendent l'électricité verte simple à comprendre.</p>
+    </article>
+  </div>
+  <p class="fine rv">*Toujours sans engagement… sauf si vous me proposez un CDI. Là, je m'engage volontiers.</p>
+</div></div>
+
+<section id="mix"><div class="wrap mix">
+  <div>
+    <p class="kicker rv">Vous avez dit <span class="it" style="text-transform:none;font-size:18px">énergie</span> ?</p>
+    <h2 class="rv">D'où vient <em>mon énergie</em> créative ?</h2>
+    <p class="sub rv">Comme pour votre électricité, je préfère être transparente sur l'origine. Voici mes trois sources, chacune alimentée par 9 ans de projets.</p>
+    <div class="cert rv"><span class="bolt" style="flex:none">✓</span><span><b>Garantie d'origine :</b> marques, agences et projets perso, à retrouver sur mon book et mon CV en ligne.</span></div>
+  </div>
+  <div class="bars">
+    <div class="rv"><div class="bar-head"><span>☀️ Print & identité</span><span>90 %*</span></div><div class="track"><div class="fill" data-w="90" style="background:var(--sun)"></div></div><p class="bar-note">Chartes, édition, packaging : la base solide.</p></div>
+    <div class="rv"><div class="bar-head"><span>🌬️ Web & UI</span><span>90 %*</span></div><div class="track"><div class="fill" data-w="90" style="background:var(--leaf)"></div></div><p class="bar-note">Sites, applis, parcours clients : ça doit couler de source.</p></div>
+    <div class="rv"><div class="bar-head"><span>💧 Motion</span><span>90 %*</span></div><div class="track"><div class="fill" data-w="90" style="background:#4FB6D6"></div></div><p class="bar-note">Ce qui donne du mouvement au reste.</p></div>
+    <p class="bar-note rv" style="font-style:italic">*Jamais 100 %, parce qu'on apprend constamment : il reste toujours 10 % de curiosité à recharger.</p>
+  </div>
+</div></section>
+
+<section id="valeurs" style="padding-top:20px"><div class="wrap">
+  <p class="kicker rv">Vos valeurs, mes habitudes</p>
+  <h2 class="rv">On a déjà <em>pas mal</em> en commun.</h2>
+  <div class="values">
+    <div class="value rv"><div><p class="them">Vous dites</p><h3>Agilité</h3></div><p>Print le matin, motion l'après-midi, retouche UI en urgence avant 18 h : je change de format sans changer de rythme.</p></div>
+    <div class="value rv"><div><p class="them">Vous dites</p><h3>Ambition</h3></div><p>120 000 compteurs, et après ? Une marque qui grandit a besoin d'une image qui suit.</p></div>
+    <div class="value rv"><div><p class="them">Vous dites</p><h3>Bienveillance</h3></div><p>Je défends mes idées sans écraser celles des autres. Les meilleures naissent souvent à plusieurs.</p></div>
+    <div class="value rv"><div><p class="them">Vous dites</p><h3>Transparence</h3></div><p>Pas de jargon inutile. Je vous dis ce qui marche, ce qui marche moins, et pourquoi.</p></div>
+    <div class="value rv"><div><p class="them">Vous dites</p><h3>Engagement</h3></div><p>Un design utile, accessible et sobre : c'est aussi ma façon de participer à la transition.</p></div>
+  </div>
+</div></section>
+
+<section id="idees" style="padding-top:20px"><div class="wrap">
+  <p class="kicker rv">Le petit plus</p>
+  <h2 class="rv">Ce que je pourrais <em>brancher</em> dès mon arrivée.</h2>
+  <div class="ideas">
+    <div class="idea rv"><span class="n">01</span><div><h3>Un coup de frais sur le digital</h3><p>Moderniser l'expérience du site et de l'espace client pour qu'elle soit à la hauteur de votre titre de Marque de l'Année.</p></div></div>
+    <div class="idea rv"><span class="n">02</span><div><h3>Des campagnes en kit</h3><p>Pour chaque opé (parrainage, jeu concours, partenariats locaux), une déclinaison print + web + social cohérente et rapide à produire.</p></div></div>
+    <div class="idea rv"><span class="n">03</span><div><h3>Le motion pédagogique</h3><p>Garanties d'origine, TRV, VertVolt : des formats courts et animés qui rendent l'électricité verte limpide.</p></div></div>
+    <div class="idea rv"><span class="n">04</span><div><h3>Une marque employeur qui pétille</h3><p>Visuels de recrutement, onboarding, séminaire à la montagne : donner à voir la belle énergie de vos équipes.</p></div></div>
+  </div>
+</div></section>
+
+<div class="final" id="contact">
+  <span class="spark" style="top:12%;left:8%">⚡</span><span class="spark" style="bottom:16%;right:9%;animation-delay:-3s">🌿</span><span class="spark" style="top:20%;right:18%;animation-delay:-5s">☀️</span>
+  <div class="wrap">
+    <p class="kicker rv" style="color:var(--forest-2)">Et maintenant</p>
+    <h2 class="rv">À vous de <em>jouer.</em></h2>
+    <p class="sub rv">Chez vous le recrutement est mutuel, chez moi aussi. Un échange avec les RH, une rencontre avec la team marketing, et on voit si le courant passe.</p>
+    <div class="cta rv">
+      <a class="btn btn-dark" href="https://estellelavenac.github.io/Estelle-Lavenac/" target="_blank" rel="noopener">Voir mon CV →</a>
+    </div>
+    <div class="steps rv"><span>1 · Vous regardez mon CV</span><span>2 · On prend un café à Toulon</span><span>3 · On démarre ⚡</span></div>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <p class="big rv">Estelle, c'est le <em>petit</em> changement aux <em>belles</em> conséquences. Une designer créative, locale et motivée. Pour vous, et surtout pour vos clients.</p>
+  <p class="small">Estelle Lavenac · Designer graphique senior · Print, web & motion · Pierrefeu-du-Var (83)<br>Page de candidature spontanée, réalisée avec amour et énergie renouvelable.</p>
+</div></footer>
+
+<script>
+(function(){
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target; el.classList.add('in');
+      el.querySelectorAll('.fill').forEach(function(f){ f.style.width=f.dataset.w+'%'; });
+      el.querySelectorAll('[data-count]').forEach(count);
+      io.unobserve(el);
+    });
+  },{threshold:.18}) : null;
+  document.querySelectorAll('.rv').forEach(function(el,i){
+    el.style.transitionDelay = (i%4)*70+'ms';
+    if(io) io.observe(el); else { el.classList.add('in'); }
+  });
+  function count(el){
+    var end=+el.dataset.count, t0=null;
+    function step(t){ if(!t0) t0=t; var p=Math.min((t-t0)/1400,1); el.textContent=Math.round(end*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  // the meter is inside .hero-card (.rv) so count runs there; fallback
+  if(!io) document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=el.dataset.count;});
+  // burger menu
+  var burger=document.querySelector('.burger');
+  function setMenu(open){ document.body.classList.toggle('menu-open',open); burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu'); }
+  burger.addEventListener('click',function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  document.querySelectorAll('.drawer a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+  // formula toggle
+  var grid=document.getElementById('offersGrid'), band=document.getElementById('offres');
+  document.querySelectorAll('.toggle button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.toggle button').forEach(function(x){x.classList.toggle('on',x===b);});
+      band.classList.toggle('hp', b.dataset.mode==='hp');
+    });
+  });
+})();
+</script>
+</body>
+</html>
